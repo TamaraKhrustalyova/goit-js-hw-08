@@ -10,8 +10,8 @@ const refs = {
 refs.form.addEventListener('submit', onFormSubmt);
 refs.form.addEventListener('input', throttle(onInput, 500));
 
-const formData = {};
-
+let formData = {};
+  
 getDataFromStorage();
 
 function onInput(e){
@@ -28,10 +28,14 @@ function onFormSubmt(e){
 
 function getDataFromStorage(){
     const data = localStorage.getItem(STORAGE_KEY);
-    console.log(data)
     if(data) {
         const storageData = JSON.parse(data);
         refs.email.value = storageData.email.trim();
         refs.message.value = storageData.message.trim();
+        
+        formData = {
+            email: storageData.email,
+            message: storageData.message,
+        }
     }
 } 
