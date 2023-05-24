@@ -24,19 +24,14 @@ function onFormSubmt(e){
         e.currentTarget.reset();
         console.log(formData);
         localStorage.removeItem(STORAGE_KEY);
-}
+}  
 
 function getDataFromStorage(){
-    const data = localStorage.getItem(STORAGE_KEY) || '';
-    console.log(data);
-    if(data){
-        let storageData = JSON.parse(data);
-        
-        console.log(storageData);
-
+    const data = localStorage.getItem(STORAGE_KEY);
+    console.log(data)
+    if(data) {
+        const storageData = JSON.parse(data);
         refs.email.value = storageData.email.trim();
         refs.message.value = storageData.message.trim();
-    }   
-}
-
-
+    }
+} 
