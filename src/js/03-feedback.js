@@ -12,7 +12,7 @@ refs.form.addEventListener('input', throttle(onInput, 500));
 
 let formData = {};
   
-// getDataFromStorage();
+getDataFromStorage();
 
 function onInput(e){
     formData[e.target.name] = e.target.value;
