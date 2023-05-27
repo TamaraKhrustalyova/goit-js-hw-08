@@ -30,8 +30,8 @@ function getDataFromStorage(){
     const data = localStorage.getItem(STORAGE_KEY);
     if(data) {
         const storageData = JSON.parse(data);
-        refs.email.value = storageData.email.trim();
-        refs.message.value = storageData.message.trim();
+        refs.email.value = storageData.email || "";
+        refs.message.value = storageData.message || "";
         
         formData = {
             email: storageData.email,
