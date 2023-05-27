@@ -24,6 +24,10 @@ function onFormSubmt(e){
         e.currentTarget.reset();
         console.log(formData);
         localStorage.removeItem(STORAGE_KEY);
+        formData = {
+            email: '',
+            message: '',
+        }
 }  
 
 function getDataFromStorage(){
